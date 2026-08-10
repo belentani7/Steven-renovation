@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /.netlify/
-Disallow: /assets/
-
-Sitemap: https://steven-renovation.fr/sitemap.xml

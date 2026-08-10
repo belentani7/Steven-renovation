@@ -11,7 +11,7 @@
      ================================================================ -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0A101D">
+<meta name="theme-color" content="#0B1526">
 <!-- CSP: política de seguridad. 'self' = archivos locales; CDN = solo fallback de GSAP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-H0o3tqwAN4FBeJaOjnGyTR' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https://api.netlify.com https://wa.me; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://wa.me">
 <title>Steven Rénovation - Entreprise Générale de Rénovation à Paris & Île-de-France | Devis 48 h</title>
@@ -41,24 +41,19 @@
 <style>
 /* ============ SISTEMA 60/30/10 (Itten) ============ */
 :root{
-/* — v6 FUMÉ · GLACÉ · GLASS — monocromático azul frío sobre base ahumada.
-   fumé: negro azulado con matiz (nunca negro puro) · glacé: ÚNICO acento azul hielo
-   luminoso (neon apagado 2026: rareza = poder) · glass: vidrio esmerilado
-   (transparencia + backdrop-blur + borde fino + sombra suave) sobre orbes de luz.
-   Nombres humanos: negro humo azulado · azul hielo glacé (#7FB4E8) · blanco helado */
---ivory:#E6EEF8;   /* blanco helado: texto principal sobre oscuro */
---paper:#0E1526;   /* papel ahumado (superficies elevadas) */
---navy:#0A101D;    /* negro humo azulado: base institucional */
---navy2:#111C30;   /* humo elevado */
---blue:#27476E;    /* azul acero ahumado (soporte) */
---amber:#7FB4E8;   /* ACENTO ÚNICO: azul hielo glacé (neon apagado) */
---amber2:#A9CDF2;  /* glacé claro: texto acento sobre vidrio */
---amber3:#16273F;  /* tinte glacé: fondos activos */
---ink:#C7D6EA;     /* texto general claro */
---mut:#7E93B5;     /* texto terciario frío */
---line:#1B2940;    /* bordes sutiles ahumados */
---wa:#25D366;      /* WhatsApp (funcional, no decorativo) */
---r:18px; --sh:0 20px 60px rgba(0,0,0,.45);
+/* — PALETA ARMÓNICA (oklch): navy hue 255° + oro complementario 75° (180° exacto) + neutros cálidos —
+   Nombres humanos: marfil porcelana · azul marino profundo · oro ámbar (#C6922A = "deep amber-gold",
+   rango legible recomendado #B8963E–#C6922A) · bronce para texto dorado sobre claro (#A8781F) */
+--ivory:#F4EEE3;   /* 60 % base artisanale (marfil porcelana / porcelaine chaude) */
+--paper:#FFFDF8;
+--navy:#0B1526;    /* 30 % confianza institucional (azul marino profundo) */
+--navy2:#13223B;
+--blue:#2E4C7B;    /* azul acero (soporte frío) */
+--amber:#C6922A;   /* 10 % única acción: ORO ÁMBAR (deep amber-gold, refinado) */
+--amber2:#A8781F;  /* bronce: texto dorado sobre fondos claros (contraste ≥3:1) */
+--amber3:#F3E4C6;  /* crema dorada: teinte claire pour fonds actifs */
+--ink:#1A222D; --mut:#5F6877; --line:#E5DCCB; --wa:#25D366;
+--r:16px; --sh:0 14px 40px rgba(11,21,38,.10);
 --fd:"Fraunces",Georgia,serif; --fb:"Manrope",system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -325,9 +320,9 @@ html{scroll-padding-top:76px}
 /* Nota de avisos (transparencia) */
 .avis-note{margin:18px auto 0;max-width:760px;text-align:center;font-size:.8rem;color:var(--mut);font-style:italic}
 /* Firma del estudio en el footer */
-.firma{margin-top:20px;padding-top:14px;border-top:1px solid rgba(185,198,218,.10);text-align:center;font-size:.72rem;letter-spacing:.04em;color:rgba(185,198,218,.46);opacity:.74}
+.firma{margin-top:20px;padding-top:14px;border-top:1px solid rgba(185,198,218,.12);text-align:center;font-size:.74rem;letter-spacing:.04em;color:rgba(185,198,218,.54);opacity:.82}
 .firma span{display:inline-block;max-width:980px}
-.firma a{color:rgba(185,198,218,.46);transition:color .25s ease,opacity .25s ease}
+.firma a{color:rgba(185,198,218,.54);transition:color .25s ease,opacity .25s ease}
 .firma a:hover{color:rgba(244,238,227,.78)}
 /* ============ RESPONSIVE (mobile-first reforzado) ============ */
 @media(max-width:1000px){.grid3,.tiers{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.steps::before{display:none}.ggrid{grid-template-columns:repeat(2,1fr)}.stats .wrap{grid-template-columns:repeat(2,1fr)}.fgrid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr}.portrait{margin:auto}}
@@ -541,7 +536,7 @@ section{padding:60px 0}
 
 <section id="video">
 <!-- VÍDEO: fuente remota Pexels como primaria (el 403 se cae al poster local automáticamente) -->
-<video autoplay muted loop playsinline preload="none" poster="assets/img/video-poster.webp" id="bvideo">
+<video autoplay muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" id="bvideo">
 <source src="https://videos.pexels.com/video-files/4763826/4763826-hd_1920_1080_25fps.mp4" type="video/mp4">
 <source src="assets/video/demo2.mp4" type="video/mp4">
 </video>
@@ -757,14 +752,8 @@ section{padding:60px 0}
 <button class="btn btn-amber" id="okc" style="padding:8px 18px">OK</button>
 </div>
 
-<!-- GSAP: carga LOCAL primero (rendimiento + SRI). Si falla, fallback a CDN cdnjs -->
-<script src="assets/js/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous" defer></script>
-<script src="assets/js/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous" defer></script>
-<script>
-/* Fallback: si los archivos locales no cargan, usar CDN (misma versión) */
-if(!window.gsap){var s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js";s.integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY";s.crossOrigin="anonymous";document.head.appendChild(s);}
-if(!window.ScrollTrigger){var s2=document.createElement("script");s2.src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js";s2.integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE";s2.crossOrigin="anonymous";document.head.appendChild(s2);}
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous" defer></script>
 <script>
 /* ================= I18N FR / ES / EN ================= */
 var T={
