@@ -13,13 +13,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050608">
 <!-- CSP: política de seguridad. 'self' = archivos locales; CDN = solo fallback de GSAP -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-ZEdrL0RqmhjyaijTEHD5tiLTBfJnY5hyQzQ8c5YJHug=' 'sha256-kPdPq1IuqNRzWfEWpdrsoC0SovNvMlqQRd4bWh094UM='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https://api.netlify.com https://wa.me; base-uri 'self'; form-action 'self' https://wa.me">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-ZEdrL0RqmhjyaijTEHD5tiLTBfJnY5hyQzQ8c5YJHug=' 'sha256-k5eAD3Uy7IBy04Ex8Krn9Kkpz0TlRPmBfZjidklALrI='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https://api.netlify.com https://wa.me; base-uri 'self'; form-action 'self' https://wa.me">
 <title>Steven Rénovation - Entreprise Générale de Rénovation à Paris & Île-de-France | Devis 48 h</title>
 <meta name="description" content="Gros œuvre, peinture, bains & cuisines, rénovation haussmannienne. Paris 75·92·93·94. Devis détaillé gratuit sous 48 h. FR·ES·EN · 06 28 51 88 49">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="color-scheme" content="dark">
 <meta property="og:title" content="Steven Rénovation - L'excellence du geste, la rigueur du contrat">
 <meta property="og:description" content="Rénovation haute précision à Paris & Île-de-France. Devis 48 h. FR·ES·EN.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop">
+<meta property="og:image:alt" content="Intérieur parisien rénové par Steven Rénovation">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -449,6 +453,16 @@ footer.site{background:var(--navy);color:var(--mut)}
 .xcard .tag{background:var(--amber);color:var(--navy)}
 
 /* ================= v7 NOIR FUME — ESCAPARATE PREMIUM ================= */
+/* TABLA CROMÁTICA CANÓNICA
+   Rol                 Color      Contraste sobre #050608   Complementario teórico
+   Negro escaparate    #050608    base                      #FAF9F7
+   Carbón estructural  #10141B    superficie                #1B1710
+   Azul pizarra        #536987    3.61:1                    #877153
+   Azul glacé          #7890B2    6.21:1                    #B29A78
+   Gris texto          #929CAB    7.30:1                    #ABA192
+   Marfil frío         #E7EBF2    16.95:1                   #F2EEE7
+   Complementarios cálidos: referencia de equilibrio; no se aplican como color visible para conservar la gama noir/azul.
+   Umbral WCAG AA: 4.5:1 texto normal, 3:1 texto grande y componentes. */
 :root{
 --ivory:#E7EBF2;--paper:#10141B;--navy:#050608;--navy2:#0A0C10;--blue:#151B25;
 --amber:#536987;--amber2:#7890B2;--amber3:#111A27;--ink:#E7EBF2;--mut:#929CAB;
@@ -525,9 +539,29 @@ footer.site{background:#050608;color:#7F8998}
 .fab:hover{color:#E7EBF2!important;border-color:#536987;transform:translateY(-3px)}
 .cookies{background:var(--glass-strong);border-top:1px solid var(--line);backdrop-filter:blur(20px)}
 #preloader{background:#050608}.pl-mark,.pl-mark em{color:#D5DAE2}.pl-line{background:#151B25}.pl-line span{background:#536987}
+/* v8: cortina óptica + profundidad de escaparate */
+html{--mx:50vw;--my:35vh}
+body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(520px circle at var(--mx) var(--my),rgba(83,105,135,.075),transparent 68%);mix-blend-mode:screen}
+body::after{content:"";position:fixed;inset:0;z-index:140;pointer-events:none;opacity:.035;background-image:repeating-radial-gradient(circle at 17% 23%,#E7EBF2 0 .35px,transparent .55px 3px);background-size:5px 5px}
+main,header,.topbar,footer.site{position:relative;z-index:2}
+#preloader{z-index:500;background:#020304;isolation:isolate;transition:clip-path .95s var(--ease),opacity .7s var(--ease),visibility .95s;clip-path:inset(0 0 0 0)}
+#preloader::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,rgba(120,144,178,.055),transparent 34%);opacity:0;transition:opacity .8s var(--ease)}
+#preloader.ready::before{opacity:1}
+#preloader.out{clip-path:inset(0 0 100% 0);opacity:0;visibility:hidden}
+.pl-inner{width:min(76vw,720px)}
+.pl-mark{font-size:clamp(.72rem,1vw,.86rem);font-family:var(--fb);font-weight:500;letter-spacing:.42em;color:#7E8793;opacity:0;transform:translateY(8px)}
+.pl-mark em{color:#929BA7}
+.pl-line{width:100%;height:1px;margin:22px auto 0;border-radius:0;background:rgba(148,157,169,.14);overflow:hidden}
+.pl-line span{width:100%;background:linear-gradient(90deg,transparent,#8A939F 20%,#B0B7C1 50%,#8A939F 80%,transparent);transform:scaleX(0);transform-origin:left center;animation:none}
+.hero-glint{position:absolute;inset:-20% auto -20% -22%;width:18%;z-index:1;pointer-events:none;opacity:.18;transform:skewX(-12deg);background:linear-gradient(90deg,transparent,rgba(197,210,228,.17),transparent);filter:blur(1px);mix-blend-mode:screen}
+.hero .wrap{z-index:3}
+.xcard .ph::after,.wcard .ph::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 25%,rgba(204,216,232,.1) 48%,transparent 68%);transform:translateX(-120%);transition:transform 1s var(--ease)}
+.xcard:hover .ph::after,.wcard:hover .ph::after{transform:translateX(120%)}
+.sec-head h2{position:relative;text-shadow:0 16px 50px rgba(0,0,0,.38)}
+.ba::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 1px rgba(220,228,240,.14),inset 0 -80px 100px rgba(0,0,0,.22)}
 @media(max-width:860px){nav{background:rgba(5,6,8,.96);border-color:var(--line);box-shadow:-24px 0 70px rgba(0,0,0,.6);visibility:hidden}nav.open{visibility:visible}#burger span{background:#D5DAE2}}
 @media(max-width:640px){section{padding:72px 0}.hero h1{font-size:clamp(2.7rem,13vw,4.1rem)}.hero .veil{background:linear-gradient(90deg,rgba(5,6,8,.94),rgba(5,6,8,.55))}.marquee{display:none}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.hero-glint,body::before{display:none}}
 </style>
 </head>
 <body>
@@ -570,10 +604,12 @@ footer.site{background:#050608;color:#7F8998}
 <div id="mbackdrop" aria-hidden="true"></div>
 
 <main id="main">
+<!-- 01 · ESCAPARATE PRINCIPAL / HERO -->
 <section class="hero" id="hero">
 <!-- VITRINA (escaparatismo): la imagen es el producto en el escaparate; Z-pattern -->
 <div class="bg"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1900&auto=format&fit=crop" alt="Intérieur parisien rénové" fetchpriority="high" width="1900" height="1267"></div>
 <div class="veil"></div>
+<div class="hero-glint" aria-hidden="true"></div>
 <div class="wrap">
 <p class="kicker" data-i18n="hero_kicker">Entreprise générale de rénovation — Paris & Île-de-France</p>
 <h1 data-i18n="hero_title">L'excellence du geste, <span>la rigueur du contrat.</span></h1>
@@ -605,6 +641,7 @@ footer.site{background:#050608;color:#7F8998}
 <div class="stat"><b data-count="48" data-suffix=" h">0</b><span data-i18n="s4">délai de devis</span></div>
 </div></div>
 
+<!-- 02 · CATÁLOGO DE OFICIOS / EXPERTISES -->
 <section id="expertises"><div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="kicker" data-i18n="exp_k">Savoir-faire technique</p>
@@ -645,6 +682,7 @@ footer.site{background:#050608;color:#7F8998}
 </div>
 </div></section>
 
+<!-- 03 · RECORRIDO DE CONFIANZA / MÉTODO -->
 <section id="methode"><div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="kicker" data-i18n="me_k">Process contractuel</p>
@@ -660,6 +698,7 @@ footer.site{background:#050608;color:#7F8998}
 </div>
 </div></section>
 
+<!-- 04 · PRUEBA VISUAL / ANTES Y DESPUÉS -->
 <section id="ba"><div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="kicker" data-i18n="ba_k">La preuve par l'image</p>
@@ -676,6 +715,7 @@ footer.site{background:#050608;color:#7F8998}
 </div>
 </div></section>
 
+<!-- 05 · PORTFOLIO / REALIZACIONES -->
 <section id="realisations"><div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="kicker" data-i18n="wo_k">Galerie de chantiers</p>
@@ -698,6 +738,7 @@ footer.site{background:#050608;color:#7F8998}
 </div>
 </div></section>
 
+<!-- 06 · ATMÓSFERA DE OBRA / MEDIA -->
 <section id="video">
 <!-- VÍDEO: fuente local primaria para evitar dependencias externas -->
 <video muted playsinline preload="none" poster="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1800&auto=format&fit=crop" id="bvideo">
@@ -709,6 +750,7 @@ footer.site{background:#050608;color:#7F8998}
 </div>
 </section>
 
+<!-- 07 · AUTORIDAD DEL ARTESANO / A PROPOS -->
 <section id="apropos"><div class="wrap">
 <div class="about-grid">
 <div class="portrait" data-reveal><b>S</b><span>Steven B.</span></div>
@@ -726,6 +768,7 @@ footer.site{background:#050608;color:#7F8998}
 </div>
 </div></section>
 
+<!-- 08 · ENCUADRE COMERCIAL / TARIFAS -->
 <section id="tarifs"><div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="kicker" data-i18n="ta_k">Repères tarifaires</p>
@@ -740,6 +783,7 @@ footer.site{background:#050608;color:#7F8998}
 <p class="ta-note" data-reveal data-i18n="ta_note">Ces fourchettes sont indicatives (hors matériaux nobles et contraintes amiante). Chaque devis est gratuit, détaillé poste par poste, et sans engagement.</p>
 </div></section>
 
+<!-- 09 · SEGURIDAD Y GARANTÍAS -->
 <section id="garanties"><div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="kicker" data-i18n="ga_k">Cadre juridique & protections</p>
@@ -754,6 +798,7 @@ footer.site{background:#050608;color:#7F8998}
 </div>
 </div></section>
 
+<!-- 10 · PRUEBA SOCIAL / TESTIMONIOS -->
 <section id="avis"><div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="kicker" data-i18n="av_k">Preuve sociale</p>
@@ -777,6 +822,7 @@ footer.site{background:#050608;color:#7F8998}
 <a class="btn btn-amber" href="tel:+33628518849"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg><span data-i18n="di_cta">Appeler Steven directement</span></a>
 </div></div>
 
+<!-- 11 · COBERTURA GEOGRÁFICA -->
 <section id="zones"><div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="kicker" data-i18n="zo_k">Couverture</p>
@@ -788,6 +834,7 @@ footer.site{background:#050608;color:#7F8998}
 </div>
 </div></section>
 
+<!-- 12 · CONVERSIÓN PRINCIPAL / PRESUPUESTO -->
 <section id="devis"><div class="wrap">
 <div class="sec-head" style="text-align:center;margin-inline:auto" data-reveal>
 <p class="kicker" data-i18n="de_k">Formulaire intelligent</p>
@@ -853,6 +900,7 @@ footer.site{background:#050608;color:#7F8998}
 </form>
 </div></section>
 
+<!-- 13 · REDUCCIÓN DE FRICCIÓN / FAQ -->
 <section id="faq"><div class="wrap" style="max-width:800px">
 <div class="sec-head" data-reveal><p class="kicker" data-i18n="fq_k">Transparence</p><h2 data-i18n="fq_t">Questions fréquentes</h2><div class="rule"></div></div>
 <details data-reveal><summary data-i18n="f1_q">Le devis est-il vraiment gratuit ?</summary><p data-i18n="f1_a">Oui : visite, métré et devis détaillé gratuits et sans engagement (art. L111-1 Code de la consommation).</p></details>
@@ -863,6 +911,7 @@ footer.site{background:#050608;color:#7F8998}
 <details data-reveal><summary data-i18n="f6_q">Quels acomptes ?</summary><p data-i18n="f6_a">Acomptes légaux uniquement, liés à l'avancement réel et toujours contre facture. Jamais de paiement « au noir ».</p></details>
 </div></section>
 
+<!-- 14 · CIERRE COMERCIAL / CTA FINAL -->
 <section id="cta"><div class="wrap" data-reveal>
 <h2 data-i18n="c_t">Un projet ? Parlons-en aujourd'hui.</h2>
 <p data-i18n="c_s">Visite conseil gratuite à Paris et en couronnes — réponse sous 48 h.</p>
@@ -958,6 +1007,7 @@ if(window.gsap&&!reduced){
 gsap.registerPlugin(ScrollTrigger);
 if(window.CustomEase){gsap.registerPlugin(CustomEase);CustomEase.create("steven","M0,0 C0.16,1 0.3,1 1,1");}
 var stevenEase=window.CustomEase?"steven":"expo.out";
+var moveGlow=null;
 var motionContext=gsap.context(function(){
 $$("[data-reveal]").forEach(function(el){
 gsap.from(el,{y:24,opacity:0,duration:1,ease:stevenEase,clearProps:"transform,opacity",scrollTrigger:{trigger:el,start:"top 88%",once:true}});
@@ -970,6 +1020,13 @@ heroTl.fromTo(".hero .bg img",{scale:1.075,opacity:.35},{scale:1.035,opacity:1,d
 .from(".hero .sub",{y:24,opacity:0,duration:.9},-.58)
 .from(".hero .cta-row .btn",{y:18,opacity:0,duration:.75,stagger:.08},-.48)
 .from(".hero .badges li",{y:14,opacity:0,duration:.65,stagger:.06},-.32);
+gsap.to(".hero-glint",{xPercent:760,duration:4.8,ease:"power2.inOut",repeat:-1,repeatDelay:3.2});
+if(window.matchMedia("(pointer:fine)").matches){
+var glowX=gsap.quickTo(document.documentElement,"--mx",{duration:.65,ease:stevenEase});
+var glowY=gsap.quickTo(document.documentElement,"--my",{duration:.65,ease:stevenEase});
+moveGlow=function(e){glowX(e.clientX+"px");glowY(e.clientY+"px");};
+window.addEventListener("pointermove",moveGlow,{passive:true});
+}
 /* ===== v6 CARQUIDEC: PARALLAX hero bg (scrub) ===== */
 gsap.to(".hero .bg img",{yPercent:7,scale:1.055,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:.8}});
 /* ===== v6 CARQUIDEC: STAGGER por grids ===== */
@@ -986,7 +1043,7 @@ gsap.fromTo(r,{scaleX:0},{scaleX:1,duration:1.05,ease:stevenEase,transformOrigin
 
 gsap.fromTo("#video video",{scale:1.035,opacity:.2},{scale:1,opacity:.34,ease:"none",scrollTrigger:{trigger:"#video",start:"top bottom",end:"bottom top",scrub:.8}});
 });
-window.addEventListener("pagehide",function(){motionContext.revert();},{once:true});
+window.addEventListener("pagehide",function(){if(moveGlow)window.removeEventListener("pointermove",moveGlow);motionContext.revert();},{once:true});
 }
 /* ========== CONTADORES ========== */
 function runCount(el){
@@ -1095,13 +1152,15 @@ else{bv.style.display="none";}
 var pl=document.getElementById("preloader"),reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(!pl){return;}
 if(reduced){pl.style.display="none";return;}
-var t=setTimeout(function(){pl.classList.add("out");setTimeout(function(){pl.style.display="none";},650);},900);
-pl.addEventListener("transitionend",function(){if(pl.classList.contains("out"))clearTimeout(t);});
-/* CSS: #preloader.out = fade+slide; se añade aquí la clase vía JS */
-pl.style.transition="opacity .6s var(--ease),visibility .6s";
-pl.style.willChange="opacity";
-window.__plHide=function(){pl.classList.add("out");pl.style.opacity="0";pl.style.visibility="hidden";};
-setTimeout(window.__plHide,900);
+var started=performance.now(),finished=false;
+if(window.gsap){gsap.timeline({defaults:{ease:"steven"}}).to(".pl-mark",{opacity:1,y:0,duration:.7}).to(".pl-line span",{scaleX:1,duration:.95},-.45);}
+function finishPreloader(){
+if(finished)return;finished=true;
+var wait=Math.max(0,900-(performance.now()-started));
+setTimeout(function(){pl.classList.add("ready");setTimeout(function(){pl.classList.add("out");},120);setTimeout(function(){pl.style.display="none";},1150);},wait);
+}
+if(document.readyState==="complete")finishPreloader();else window.addEventListener("load",finishPreloader,{once:true});
+setTimeout(finishPreloader,3500);
 })();
 /* ========== MENÚ MÓVIL (hamburguesa + backdrop) ========== */
 (function(){
