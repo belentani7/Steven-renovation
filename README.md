@@ -1,21 +1,41 @@
-STEVEN RENOVATION
+# Steven Renovation
 
+Official website for Steven Renovation.
 
-Steven Renovation is a renovation and interior works business focused on residential improvement, maintenance, finishing, and refurbishment services.
+Steven Renovation is a Paris-based renovation and interior works business focused on high-quality residential improvement, maintenance, finishing, and refurbishment services.
 
-This repository contains the website assets prepared for the brand presentation online, including the main page, service visuals, and supporting media used to communicate the company image in a clear and professional way.
+This repository contains the website source and media assets used to present the brand online with a clear, premium, and professional image.
 
-Repository purpose
-- present the Steven Renovation brand online
-- showcase renovation services and visual references
-- provide a clean base for static website publishing
+## Scope
 
-Main contents
-- website HTML files
-- service images
-- video assets
-- short project description files
-- 
-Brand
-Steven Renovation
+- brand presentation website
+- commercial service content
+- project visuals and supporting media
+- static files for deployment
+
+## Main Stack
+
+- HTML
+- CSS
+- JavaScript
+- GSAP
+
+## Project Structure
+
+- `public/index.html`: main published version
+- `public/index-v7.html`: alternate version
+- `public/index-fume.html`: alternate version
+- `public/index-carquidec.html`: alternate version
+- `public/assets/img`: image assets
+- `public/assets/video`: video assets
+- `netlify/functions`: quote form handling
+
+## Credits
+
+Website design and development by Pedro Belentani.
+
+- `belentani.eu`
+- `noiacore.com`
+- `@belentani_`
+- `belentani7studio@proton.me`
 
