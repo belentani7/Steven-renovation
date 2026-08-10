@@ -1,0 +1,22 @@
+# ================================================================
+# _headers — Cabeceras de seguridad para Netlify
+# Steven Rénovation · v5 PREMIUM · by Pedro Belentani
+# ================================================================
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https://api.netlify.com https://wa.me; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://wa.me
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# HTML con charset ya declarado en el documento (UTF-8)
+
+# Assets con caché larga (los nombres se versionan en el HTML si cambian)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# El HTML nunca se cachea agresivamente (siempre se revisa)
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
