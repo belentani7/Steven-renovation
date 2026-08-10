@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050608">
 <!-- CSP: política de seguridad. 'self' = archivos locales; CDN = solo fallback de GSAP -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-ZEdrL0RqmhjyaijTEHD5tiLTBfJnY5hyQzQ8c5YJHug=' 'sha256-KD8yjx3CaCLLFvy8qZl6tIkd62GAz1nwjdZcUqX6FA8='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https://api.netlify.com https://wa.me; base-uri 'self'; form-action 'self' https://wa.me">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-ZEdrL0RqmhjyaijTEHD5tiLTBfJnY5hyQzQ8c5YJHug=' 'sha256-Ob5PskRv8YPGlmXSztfgVwpOCr1e+mtvO6pavaJE6+0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https://api.netlify.com https://wa.me; base-uri 'self'; form-action 'self' https://wa.me">
 <title>Steven Rénovation - Entreprise Générale de Rénovation à Paris & Île-de-France | Devis 48 h</title>
 <meta name="description" content="Gros œuvre, peinture, bains & cuisines, rénovation haussmannienne. Paris 75·92·93·94. Devis détaillé gratuit sous 48 h. FR·ES·EN · 06 28 51 88 49">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -561,9 +561,13 @@ main,header,.topbar,footer.site{position:relative;z-index:2}
 .ba::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 1px rgba(220,228,240,.14),inset 0 -80px 100px rgba(0,0,0,.22)}
 @media(max-width:860px){nav{background:rgba(5,6,8,.96);border-color:var(--line);box-shadow:-24px 0 70px rgba(0,0,0,.6);visibility:hidden}nav.open{visibility:visible}#burger span{background:#D5DAE2}}
 @media(max-width:640px){section{padding:72px 0}.hero h1{font-size:clamp(2.7rem,13vw,4.1rem)}.hero .veil{background:linear-gradient(90deg,rgba(5,6,8,.94),rgba(5,6,8,.55))}.marquee{display:none}}
-/* Modo de trabajo: la cortina nunca bloquea la vista. */
-#preloader{display:none!important}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.hero-glint{display:block;left:42%;opacity:.14}body::before{display:none}}
+/* Cortina autónoma: visible al cargar, transparente a interacción y salida garantizada por CSS. */
+@keyframes preloadRelease{0%,62%{clip-path:inset(0);opacity:1;visibility:visible}100%{clip-path:inset(0 0 100%);opacity:0;visibility:hidden}}
+@keyframes preloadLine{0%{transform:scaleX(0)}72%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+@keyframes preloadReduced{to{opacity:0;visibility:hidden}}
+#preloader{display:flex!important;pointer-events:none;animation:preloadRelease 1.45s var(--ease) forwards}
+.pl-mark{opacity:1;transform:none}.pl-line span{animation:preloadLine 1.05s var(--ease) forwards}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}#preloader{animation:preloadReduced .01ms linear 1.2s forwards!important}.pl-line span{transform:scaleX(1)}.hero-glint{display:block;left:42%;opacity:.14}body::before{display:none}}
 </style>
 </head>
 <body>
@@ -1157,8 +1161,8 @@ var started=performance.now(),finished=false;
 if(window.gsap&&!reduced){gsap.timeline({defaults:{ease:"steven"}}).to(".pl-mark",{opacity:1,y:0,duration:.7}).to(".pl-line span",{scaleX:1,duration:.95},-.45);}
 function finishPreloader(){
 if(finished)return;finished=true;
-var wait=Math.max(0,900-(performance.now()-started));
-setTimeout(function(){pl.classList.add("ready");setTimeout(function(){pl.classList.add("out");},120);setTimeout(function(){pl.style.display="none";},1150);},wait);
+var wait=Math.max(0,1100-(performance.now()-started));
+setTimeout(function(){pl.classList.add("ready");setTimeout(function(){pl.classList.add("out");},140);setTimeout(function(){pl.style.display="none";},1500);},wait);
 }
 if(document.readyState==="complete")finishPreloader();else window.addEventListener("load",finishPreloader,{once:true});
 setTimeout(finishPreloader,3500);
