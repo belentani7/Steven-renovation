@@ -11,9 +11,9 @@
      ================================================================ -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#050608">
 <!-- CSP: política de seguridad. 'self' = archivos locales; CDN = solo fallback de GSAP -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-H0o3tqwAN4FBeJaOjnGyTR' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https://api.netlify.com https://wa.me; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://wa.me">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https://api.netlify.com https://wa.me; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://wa.me">
 <title>Steven Rénovation - Entreprise Générale de Rénovation à Paris & Île-de-France | Devis 48 h</title>
 <meta name="description" content="Gros œuvre, peinture, bains & cuisines, rénovation haussmannienne. Paris 75·92·93·94. Devis détaillé gratuit sous 48 h. FR·ES·EN · 06 28 51 88 49">
 <meta property="og:title" content="Steven Rénovation - L'excellence du geste, la rigueur du contrat">
@@ -46,18 +46,18 @@
    ÚNICO acento dorado ENVEJECIDO #B8A88A (10 %, raro = poder) · blanco roto #F5F1E8.
    Tipografía editorial: Cormorant Garamond (serif) + Space Grotesk (sans técnica).
    Las fotos son escasas → se tratan como obras: grandes, enmarcadas, con respiración. */
---ivory:#F5F1E8;   /* blanco roto: texto principal sobre oscuro */
+--ivory:#E7EBF2;
 --paper:#111111;   /* superficie elevada */
 --navy:#0A0A0A;    /* negro mate: base institucional */
 --navy2:#141414;   /* negro superficie */
 --blue:#222222;    /* gris carbón (soporte) */
---amber:#B8A88A;   /* ACENTO ÚNICO: dorado envejecido CARQUIDEC (raro = poder) */
---amber2:#8A7A5A;  /* dorado oscuro: texto dorado sobre claro */
---amber3:#1E1B14;  /* tinte dorado: fondos activos */
---ink:#E8E6E0;     /* texto general (blanco roto) */
---mut:#9A968C;     /* texto secundario piedra */
+--amber:#536987;
+--amber2:#7890B2;
+--amber3:#111A27;
+--ink:#E7EBF2;
+--mut:#929CAB;
 --line:#2A2A2A;    /* bordes carbón */
---wa:#25D366;      /* WhatsApp (funcional, no decorativo) */
+--wa:#536987;
 --r:2px; --sh:0 30px 80px rgba(0,0,0,.55);
 --fd:"Cormorant Garamond",Georgia,serif; --fb:"Space Grotesk",system-ui,sans-serif;
 }
@@ -298,8 +298,8 @@ footer.site{background:var(--navy);color:#9A968C;padding:64px 0 30px;font-size:.
 :root{--ease:cubic-bezier(.22,1,.36,1)}
 html{scroll-padding-top:76px}
 /* Botón WhatsApp (verde marca, conviven con ámbar) */
-.btn-wa{background:#25D366;color:#07351C;box-shadow:0 8px 22px rgba(37,211,102,.35)}
-.btn-wa:hover{background:#1FB458;transform:translateY(-2px)}
+.btn-wa{background:#536987;color:#E7EBF2;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.btn-wa:hover{background:#637A9A;transform:translateY(-2px)}
 /* Nav CTA dentro del menú */
 .nav-cta{display:none;margin-top:14px;justify-content:center}
 /* Botón hamburguesa (solo móvil) */
@@ -447,6 +447,87 @@ footer.site{background:var(--navy);color:var(--mut)}
 .fab.call{background:var(--amber);color:var(--navy)}
 /* Hover cards expertises: el tag dorado se mantiene */
 .xcard .tag{background:var(--amber);color:var(--navy)}
+
+/* ================= v7 NOIR FUME — ESCAPARATE PREMIUM ================= */
+:root{
+--ivory:#E7EBF2;--paper:#10141B;--navy:#050608;--navy2:#0A0C10;--blue:#151B25;
+--amber:#536987;--amber2:#7890B2;--amber3:#111A27;--ink:#E7EBF2;--mut:#929CAB;
+--line:rgba(163,180,204,.18);--wa:#536987;--r:14px;
+--sh:0 30px 90px rgba(0,0,0,.42);--glass:rgba(14,19,28,.62);--glass-strong:rgba(9,12,18,.84);
+--ease:cubic-bezier(.16,1,.3,1)
+}
+html,body{background:#050608;color:var(--ink);max-width:100%;overflow-x:clip}
+body{font-weight:400;letter-spacing:-.005em}
+section{padding:clamp(88px,10vw,144px) 0;position:relative}
+section::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.wrap{max-width:1240px;padding-inline:clamp(22px,4vw,54px)}
+::selection{background:#536987;color:#E7EBF2}
+#pbar{height:2px;background:#7890B2;box-shadow:0 0 18px rgba(120,144,178,.35)}
+.topbar{background:#050608;color:#7F8998;border-bottom:1px solid var(--line)}
+.topbar b,.topbar svg,footer p svg{color:#7890B2}
+header,#header.scrolled{background:var(--glass-strong);border-color:var(--line);box-shadow:0 16px 48px rgba(0,0,0,.22);backdrop-filter:blur(22px) saturate(125%);-webkit-backdrop-filter:blur(22px) saturate(125%)}
+.logo,.logo em,nav a{color:#E7EBF2}
+.logo em{font-style:normal;font-weight:500}
+nav a{font-weight:500;letter-spacing:.02em}
+nav a::after{height:1px;background:#7890B2}
+.lang{border-radius:999px;background:rgba(83,105,135,.08)}
+.lang.active{background:#536987;border-color:#536987;color:#F0F3F8}
+.btn{min-height:48px;border-radius:999px;padding:13px 24px;font-weight:600;letter-spacing:.01em;transition:transform .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn-amber,.btn-wa,#cta .btn-navy{background:#536987;color:#F0F3F8;box-shadow:0 14px 38px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.12)}
+.btn-amber:hover,.btn-wa:hover,#cta .btn-navy:hover{background:#637A9A;box-shadow:0 18px 48px rgba(0,0,0,.36),inset 0 1px rgba(255,255,255,.16)}
+.btn-line{border:1px solid rgba(231,235,242,.34);background:rgba(8,11,16,.28);backdrop-filter:blur(14px);color:#E7EBF2}
+.btn-navy,.btn-call{background:#101722;color:#E7EBF2;border:1px solid var(--line)}
+.hero{min-height:calc(100svh - 38px);padding:0;color:#E7EBF2;background:#050608}
+.hero::before{display:none}
+.hero .bg img{animation:none;filter:grayscale(1) contrast(1.08) brightness(.72);transform:scale(1.035)}
+.hero .veil{background:linear-gradient(90deg,rgba(5,6,8,.96) 0%,rgba(5,6,8,.83) 40%,rgba(5,6,8,.28) 72%,rgba(5,6,8,.18) 100%)}
+.hero .wrap{width:100%;padding-top:clamp(112px,15vh,170px);padding-bottom:clamp(96px,14vh,150px)}
+.hero h1{max-width:760px;font-size:clamp(3rem,6.3vw,6rem);line-height:.96;letter-spacing:-.035em;text-wrap:balance}
+.hero h1 span{color:#AAB5C5;font-style:italic}
+.hero .sub{max-width:580px;color:#A9B2C0;font-size:clamp(1rem,1.25vw,1.16rem);line-height:1.7}
+.kicker,.sec-head .kicker{color:#7890B2;font-weight:600;letter-spacing:.22em}
+.kicker::before{height:1px;background:#536987}
+.badges{max-width:760px}.badges li{border:1px solid var(--line);background:var(--glass);border-radius:999px;color:#B8C1CE;backdrop-filter:blur(16px)}
+.badges li b{color:#E7EBF2}.scroll-hint{animation:none;color:#7F8998}
+.marquee{background:#080B10;color:#929CAB;border-color:var(--line);padding:11px 0}.mq-track{animation:none;justify-content:center;opacity:.72}
+.stats{background:#080A0E}.stat b{color:#B3BDCB;font-weight:500}.stat span{color:#7F8998;font-weight:500}
+.sec-head{max-width:780px}.sec-head h2,h2{color:#E7EBF2;font-weight:500;letter-spacing:-.025em;text-wrap:balance}
+.sec-head .rule{background:linear-gradient(90deg,#536987,transparent)}
+.sec-sub{color:#929CAB}
+.grid3{gap:18px}.xcard,.wcard,.tier,.gcard,details{background:linear-gradient(145deg,rgba(18,23,31,.92),rgba(10,13,18,.94));border:1px solid var(--line);box-shadow:none;overflow:hidden;position:relative}
+.xcard::before,.wcard::before,.tier::before,.gcard::before,.dform::before{content:"";position:absolute;inset:0 10% auto;height:1px;background:linear-gradient(90deg,transparent,rgba(190,205,226,.34),transparent);pointer-events:none}
+.xcard,.wcard{transition:transform .42s var(--ease),border-color .42s var(--ease),box-shadow .42s var(--ease)}
+.xcard:hover,.wcard:hover{transform:translateY(-5px);border-color:rgba(120,144,178,.42);box-shadow:0 28px 70px rgba(0,0,0,.34)}
+.xcard .ph img,.wcard .ph img,.portrait{filter:grayscale(1) contrast(1.08) brightness(.82);transition:filter .6s var(--ease),transform .8s var(--ease)}
+.xcard:hover .ph img,.wcard:hover .ph img{filter:grayscale(1) contrast(1.12) brightness(.94);transform:scale(1.025)}
+.xcard .tag,.wcard .dur,.svc-chip{background:#131C29;color:#AEB9C8;border:1px solid var(--line)}
+.xcard .lot,.wcard .tag,.tier .price,.about-txt .mini span b,.gcard .ic{color:#7890B2}
+#methode,#apropos,#avis,#tarifs{background:#080A0E}
+.step .num{background:#101722;color:#AEB9C8;border-color:#1E2A3A;box-shadow:none}
+#ba,#video,#devis,#cta{background:#050608}
+.ba{border:1px solid var(--line);box-shadow:0 40px 100px rgba(0,0,0,.55)}
+.ba .handle,.ba .handle::after{background:#7890B2}.ba .handle::after{color:#050608}
+.portrait{background:linear-gradient(145deg,#111722,#07090D);border:1px solid var(--line)}
+.about-txt .mini span,.chips span{background:#101722;border:1px solid var(--line);color:#B8C1CE}
+.tier.hot{border-color:#536987;box-shadow:inset 0 0 0 1px rgba(83,105,135,.2)}
+.tier.hot::before{content:"02";background:#536987;color:#E7EBF2;font-family:var(--fb);font-size:.68rem;letter-spacing:.06em}
+.gcard{border-top:1px solid rgba(120,144,178,.4)}
+.t-slide{background:transparent;border:0}.stars{font-size:0}.stars::after{content:"AVIS CLIENT";font:600 .7rem/1 var(--fb);letter-spacing:.24em;color:#7890B2}
+.diag{background:#0A0D12;border-color:var(--line)}
+.dform{background:var(--glass);border:1px solid rgba(163,180,204,.24);box-shadow:0 45px 120px rgba(0,0,0,.46);backdrop-filter:blur(22px)}
+.field input,.field textarea,.opts label{background:#0A0E14;color:#E7EBF2;border-color:var(--line)}
+.opts label:has(input:checked){background:#111A27;border-color:#536987;box-shadow:inset 0 0 0 1px rgba(120,144,178,.16)}
+.form-err{background:#171A20;border-color:#6E7785;color:#D5DAE2}
+#cta{border-color:var(--line)}
+footer.site{background:#050608;color:#7F8998}
+.fab{background:var(--glass-strong)!important;color:#B8C1CE!important;border:1px solid var(--line);box-shadow:0 18px 44px rgba(0,0,0,.35);backdrop-filter:blur(18px)}
+.fab:hover{color:#E7EBF2!important;border-color:#536987;transform:translateY(-3px)}
+.cookies{background:var(--glass-strong);border-top:1px solid var(--line);backdrop-filter:blur(20px)}
+#preloader{background:#050608}.pl-mark,.pl-mark em{color:#D5DAE2}.pl-line{background:#151B25}.pl-line span{background:#536987}
+@media(max-width:860px){nav{background:rgba(5,6,8,.96);border-color:var(--line);box-shadow:-24px 0 70px rgba(0,0,0,.6);visibility:hidden}nav.open{visibility:visible}#burger span{background:#D5DAE2}}
+@media(max-width:640px){section{padding:72px 0}.hero h1{font-size:clamp(2.7rem,13vw,4.1rem)}.hero .veil{background:linear-gradient(90deg,rgba(5,6,8,.94),rgba(5,6,8,.55))}.marquee{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
@@ -836,8 +917,9 @@ footer.site{background:var(--navy);color:var(--mut)}
 </div>
 
 <!-- GSAP: carga LOCAL primero (rendimiento + SRI). Si falla, fallback a CDN cdnjs -->
-<script src="assets/js/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous" defer></script>
-<script src="assets/js/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous" defer></script>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/CustomEase.min.js"></script>
 <script>
 /* Fallback: si los archivos locales no cargan, usar CDN (misma versión) */
 if(!window.gsap){var s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js";s.integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY";s.crossOrigin="anonymous";document.head.appendChild(s);}
@@ -875,31 +957,37 @@ pb.style.width=(window.scrollY/h*100)+"%";
 var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(window.gsap&&!reduced){
 gsap.registerPlugin(ScrollTrigger);
+if(window.CustomEase){gsap.registerPlugin(CustomEase);CustomEase.create("steven","M0,0 C0.16,1 0.3,1 1,1");}
+var stevenEase=window.CustomEase?"steven":"expo.out";
+var motionContext=gsap.context(function(){
 $$("[data-reveal]").forEach(function(el){
-gsap.from(el,{y:36,opacity:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 90%"}});
+gsap.from(el,{y:24,opacity:0,duration:1,ease:stevenEase,clearProps:"transform,opacity",scrollTrigger:{trigger:el,start:"top 88%",once:true}});
 });
 /* ===== v6 CARQUIDEC: INTRO HERO (timeline encadenada) ===== */
-gsap.from(".hero .kicker",{y:24,opacity:0,duration:.8,ease:"power3.out",delay:.15});
-gsap.from(".hero h1",{y:40,opacity:0,duration:1,ease:"power3.out",delay:.3});
-gsap.from(".hero h1 span",{letterSpacing:"0.02em",opacity:0,duration:.9,ease:"power2.out",delay:.55});
-gsap.from(".hero .sub",{y:28,opacity:0,duration:.9,ease:"power3.out",delay:.6});
-gsap.from(".hero .cta-row .btn",{y:24,opacity:0,duration:.7,stagger:.12,ease:"power3.out",delay:.75});
-gsap.from(".hero .badges li",{y:18,opacity:0,duration:.6,stagger:.09,ease:"power3.out",delay:1.05});
+var heroTl=gsap.timeline({defaults:{ease:stevenEase}});
+heroTl.fromTo(".hero .bg img",{scale:1.075,opacity:.35},{scale:1.035,opacity:1,duration:1.45})
+.from(".hero .kicker",{y:18,opacity:0,duration:.8},-.95)
+.from(".hero h1",{y:34,opacity:0,clipPath:"inset(0 0 100% 0)",duration:1.15},-.72)
+.from(".hero .sub",{y:24,opacity:0,duration:.9},-.58)
+.from(".hero .cta-row .btn",{y:18,opacity:0,duration:.75,stagger:.08},-.48)
+.from(".hero .badges li",{y:14,opacity:0,duration:.65,stagger:.06},-.32);
 /* ===== v6 CARQUIDEC: PARALLAX hero bg (scrub) ===== */
-gsap.to(".hero .bg img",{yPercent:14,scale:1.06,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+gsap.to(".hero .bg img",{yPercent:7,scale:1.055,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:.8}});
 /* ===== v6 CARQUIDEC: STAGGER por grids ===== */
 $$(".grid3,.ggrid,.tiers,.tsteps,.gsteps").forEach(function(g){
 var kids=g.children;
 if(kids.length){
-gsap.from(kids,{y:30,opacity:0,duration:.8,stagger:.09,ease:"power3.out",scrollTrigger:{trigger:g,start:"top 85%"}});
+gsap.from(kids,{y:22,opacity:0,duration:.92,stagger:.065,ease:stevenEase,clearProps:"transform,opacity",scrollTrigger:{trigger:g,start:"top 84%",once:true}});
 }
 });
 /* ===== v6 CARQUIDEC: las líneas doradas se dibujan ===== */
 $$(".sec-head .rule").forEach(function(r){
-gsap.fromTo(r,{scaleX:0},{scaleX:1,duration:1.1,ease:"power4.out",transformOrigin:"left center",scrollTrigger:{trigger:r,start:"top 95%"}});
+gsap.fromTo(r,{scaleX:0},{scaleX:1,duration:1.05,ease:stevenEase,transformOrigin:"left center",scrollTrigger:{trigger:r,start:"top 92%",once:true}});
 });
 
-gsap.fromTo("#video video",{scale:1.04,opacity:.22},{scale:1,opacity:.38,ease:"none",scrollTrigger:{trigger:"#video",start:"top 85%",end:"bottom top",scrub:true}});
+gsap.fromTo("#video video",{scale:1.035,opacity:.2},{scale:1,opacity:.34,ease:"none",scrollTrigger:{trigger:"#video",start:"top bottom",end:"bottom top",scrub:.8}});
+});
+window.addEventListener("pagehide",function(){motionContext.revert();},{once:true});
 }
 /* ========== CONTADORES ========== */
 function runCount(el){
@@ -965,9 +1053,16 @@ var body="Bonjour Steven — Demande de devis"+(svc?" ["+svc+"]":"")
 +" | "+document.getElementById("fmsg").value;
 /* Backend firmado: POST a /.netlify/functions/devis (Netlify). Fallback: wa.me */
 var payload={name:n,phone:p,city:document.getElementById("fcity").value,msg:document.getElementById("fmsg").value,svc:svc,q1:g("q1"),q2:g("q2"),q3:g("q3"),q4:g("q4"),q5:g("q5"),lang:document.documentElement.lang};
-var sent=false;
-if(window.fetch){fetch("/.netlify/functions/devis",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}).then(function(r){if(r.ok)sent=true;showDone();}).catch(function(){showDone();});}
-else{showDone();}
+if(window.fetch){fetch("/.netlify/functions/devis",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);showDone();}).catch(function(){showFallback();});}
+else{showFallback();}
+function showFallback(){
+var err=document.getElementById("derr");
+err.textContent="Envoi direct indisponible. Utilisez WhatsApp ou e-mail avec les boutons ci-dessous.";
+err.style.display="block";
+document.getElementById("dwa").href="https://wa.me/33628518849?text="+encodeURIComponent(body);
+document.getElementById("dmail").href="mailto:contact@steven-renovation.fr?subject="+encodeURIComponent("Demande de devis — "+n)+"&body="+encodeURIComponent(body);
+document.getElementById("ddone").hidden=false;
+}
 function showDone(){
 document.getElementById("dwa").href="https://wa.me/33628518849?text="+encodeURIComponent(body);
 document.getElementById("dmail").href="mailto:contact@steven-renovation.fr?subject="+encodeURIComponent("Demande de devis — "+n)+"&body="+encodeURIComponent(body);
