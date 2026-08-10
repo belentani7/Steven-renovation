@@ -107,7 +107,7 @@ footer p svg{width:15px;height:15px;vertical-align:-3px;margin-right:7px;color:v
 .legal-mini svg{width:14px;height:14px;vertical-align:-2px;margin-right:6px}
 .done-ico{display:flex;align-items:center;gap:9px}
 /* ============ HERO — Z-pattern + tercios + Ken Burns ============ */
-.hero{position:relative;min-height:92vh;display:flex;align-items:center;color:var(--ivory);overflow:hidden;background:var(--navy)}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;color:var(--ivory);overflow:hidden;background:var(--navy);padding-bottom:48px}
 .hero .bg{position:absolute;inset:0}
 .hero .bg img{width:100%;height:100%;object-fit:cover;animation:kb 20s ease-out forwards}
 @keyframes kb{from{transform:scale(1)}to{transform:scale(1.14)}}
@@ -186,7 +186,7 @@ h2{font-family:var(--fd);font-size:clamp(1.7rem,3.4vw,2.6rem);color:var(--navy);
 .wcard p{color:var(--mut);font-size:.9rem}
 .wcard .tag{display:inline-block;margin-bottom:10px;color:var(--amber2);font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
 /* ============ VÍDEO ============ */
-#video{position:relative;padding:120px 0;color:var(--ivory);overflow:hidden;background:var(--navy)}
+#video{position:relative;padding:150px 0 120px;color:var(--ivory);overflow:hidden;background:var(--navy)}
 #video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38}
 #video .wrap{position:relative;z-index:2;text-align:center}
 #video h2{color:var(--ivory)}
@@ -354,14 +354,15 @@ nav a::after{display:none}
 .chips span{padding:12px 16px}
 .step .num{width:56px;height:56px;font-size:1.25rem}
 /* Hero compacto para móvil */
-.hero{min-height:86vh}
-.hero .wrap{padding:70px 22px}
+.hero{min-height:86vh;padding-bottom:64px}
+.hero .wrap{padding:70px 22px 88px}
 .hero h1{font-size:clamp(2rem,8.5vw,2.6rem)}
 .dprog span{display:none}
 .dnav .btn{min-width:120px;width:auto}
 .opts label{padding:16px 12px;min-height:48px}
 .t-slide{padding:30px 18px}
 section{padding:60px 0}
+#video{padding:120px 0 96px}
 .fab{width:52px;height:52px;font-size:1.3rem}
 .fab.wa{bottom:16px;right:16px}
 .fab.call{bottom:78px;right:16px}
@@ -616,9 +617,9 @@ footer.site{background:var(--navy);color:var(--mut)}
 </div></section>
 
 <section id="video">
-<!-- VÍDEO: fuente remota Pexels como primaria (el 403 se cae al poster local automáticamente) -->
-<video autoplay muted loop playsinline preload="none" poster="assets/img/video-poster.webp" id="bvideo">
-<source src="https://videos.pexels.com/video-files/4763826/4763826-hd_1920_1080_25fps.mp4" type="video/mp4">
+<!-- VÍDEO: fuente local primaria para evitar dependencias externas -->
+<video autoplay muted loop playsinline preload="metadata" poster="assets/img/video-poster.webp" id="bvideo">
+<source src="assets/video/demo1.mp4" type="video/mp4">
 <source src="assets/video/demo2.mp4" type="video/mp4">
 </video>
 <div class="wrap" data-reveal>
@@ -850,13 +851,18 @@ en:{top_zone:"Paris (75) & Île-de-France (92·93·94·95)",top_hours:"Mon–Fri
 };
 function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
 function setLang(l){
-localStorage.setItem("sr4_lang",l);
+try{localStorage.setItem("sr4_lang",l);}catch(e){}
 document.documentElement.lang=l;
 $$("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n");if(T[l]&&T[l][k])el.innerHTML=T[l][k];});
-$$(".lang").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-lang")===l);});
+$$(".lang").forEach(function(b){
+b.classList.toggle("active",b.getAttribute("data-lang")===l);
+b.setAttribute("aria-pressed",b.getAttribute("data-lang")===l?"true":"false");
+});
 }
 $$(".lang").forEach(function(b){b.addEventListener("click",function(){setLang(b.getAttribute("data-lang"));});});
-setLang(localStorage.getItem("sr4_lang")||"fr");
+var savedLang="fr";
+try{savedLang=localStorage.getItem("sr4_lang")||"fr";}catch(e){}
+setLang(savedLang);
 /* ========== HEADER + PROGRESS ========== */
 var hdr=document.getElementById("header"),pb=document.getElementById("pbar");
 window.addEventListener("scroll",function(){
@@ -891,6 +897,8 @@ gsap.from(kids,{y:30,opacity:0,duration:.8,stagger:.09,ease:"power3.out",scrollT
 $$(".sec-head .rule").forEach(function(r){
 gsap.fromTo(r,{scaleX:0},{scaleX:1,duration:1.1,ease:"power4.out",transformOrigin:"left center",scrollTrigger:{trigger:r,start:"top 95%"}});
 });
+
+gsap.fromTo("#video video",{scale:1.04,opacity:.22},{scale:1,opacity:.38,ease:"none",scrollTrigger:{trigger:"#video",start:"top 85%",end:"bottom top",scrub:true}});
 }
 /* ========== CONTADORES ========== */
 function runCount(el){
