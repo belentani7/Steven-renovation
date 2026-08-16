@@ -45,25 +45,21 @@
 <style>
 /* ============ SISTEMA 60/30/10 (Itten) ============ */
 :root{
-/* — v6 CARQUIDEC — inspirada en el estudio CARQUIDEC (arquitectura paramétrica de lujo).
-   Brutalismo cálido + misterio: negro mate #0A0A0A (70 %) · superficies #111 ·
-   ÚNICO acento dorado ENVEJECIDO #B8A88A (10 %, raro = poder) · blanco roto #F5F1E8.
-   Tipografía editorial: Cormorant Garamond (serif) + Space Grotesk (sans técnica).
-   Las fotos son escasas → se tratan como obras: grandes, enmarcadas, con respiración. */
---ivory:#E7EBF2;
---paper:#111111;   /* superficie elevada */
---navy:#0A0A0A;    /* negro mate: base institucional */
---navy2:#141414;   /* negro superficie */
---blue:#222222;    /* gris carbón (soporte) */
---amber:#536987;
---amber2:#7890B2;
---amber3:#111A27;
---ink:#E7EBF2;
---mut:#929CAB;
---line:#2A2A2A;    /* bordes carbón */
---wa:#536987;
---r:2px; --sh:0 30px 80px rgba(0,0,0,.55);
---fd:"Cormorant Garamond",Georgia,serif; --fb:"Space Grotesk",system-ui,sans-serif;
+/* — PALETA ARMÓNICA (oklch): navy hue 255° + oro complementario 75° (180° exacto) + neutros cálidos —
+   Nombres humanos: marfil porcelana · azul marino profundo · oro ámbar (#C6922A = "deep amber-gold",
+   rango legible recomendado #B8963E–#C6922A) · bronce para texto dorado sobre claro (#A8781F) */
+--ivory:#F4EEE3;   /* 60 % base artisanale (marfil porcelana / porcelaine chaude) */
+--paper:#FFFDF8;
+--white:#FFFDF8;
+--navy:#0B1526;    /* 30 % confianza institucional (azul marino profundo) */
+--navy2:#13223B;
+--blue:#2E4C7B;    /* azul acero (soporte frío) */
+--amber:#C6922A;   /* 10 % única acción: ORO ÁMBAR (deep amber-gold, refinado) */
+--amber2:#A8781F;  /* bronce: texto dorado sobre fondos claros (contraste ≥3:1) */
+--amber3:#F3E4C6;  /* crema dorada: teinte claire pour fonds actifs */
+--ink:#1A222D; --mut:#5F6877; --line:#E5DCCB; --wa:#25D366;
+--r:16px; --sh:0 14px 40px rgba(11,21,38,.10);
+--fd:"Fraunces",Georgia,serif; --fb:"Manrope",system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
