@@ -1,17 +1,29 @@
-# Steven-renovation
+# Steven Renovation
 
-Este proyecto contiene la estructura local de una web comercial para servicios de reformas. La carpeta agrupa variantes HTML, recursos visuales, vídeos y documentación breve preparada para organizar el material antes de subirlo a GitHub.
+Sitio web para negocio de reformas.
 
-## Stack
+## Qué es
 
-- Primary language: HTML
+Una web de presentación para un negocio de renovación: servicios, trabajos realizados y
+contacto. El objetivo es que alguien que busca reformas entienda qué se ofrece y cómo pedir
+presupuesto.
 
-## Getting started
+En línea: <https://steven-renovation.vercel.app>
 
-```bash
-git clone https://github.com/belentani7/Steven-renovation.git
+## Estructura
+
+```
+index.html     pagina principal
+assets/        imagenes y recursos
+css/           estilos
+js/            logica
 ```
 
----
+## Nota sobre el repositorio
 
-License: not specified
+Es el sitio de un negocio de un tercero, alojado aquí por comodidad de despliegue. No forma
+parte del universo artístico Belentani.
+
+## Licencia
+
+Sin licencia declarada.
