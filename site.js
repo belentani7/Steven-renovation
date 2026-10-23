@@ -11,11 +11,24 @@ fr:"Envoi direct indisponible. Utilisez WhatsApp ou e-mail avec les boutons ci-d
 es:"El envío directo no está disponible. Usa WhatsApp o correo electrónico con los botones siguientes.",
 en:"Direct sending is unavailable. Use WhatsApp or email with the buttons below."
 };
-function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
+var fallbackHeadings={fr:"Envoi non effectué",es:"Solicitud pendiente de envío",en:"Request not sent"};
+var fallbackDetails={
+fr:"Votre demande n'a pas encore été transmise. Cliquez sur WhatsApp ou E-mail ci-dessous pour l'envoyer vous-même.",
+es:"Tu solicitud todavía no se ha enviado. Pulsa WhatsApp o E-mail para enviarla tú mismo.",
+en:"Your request has not been sent. Select WhatsApp or E-mail below to send it yourself."
+};
+function $(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
 function setLang(l){
 try{localStorage.setItem("sr4_lang",l);}catch(e){}
 document.documentElement.lang=l;
-$$("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n");if(T[l]&&T[l][k])el.innerHTML=T[l][k];});
+$("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n");if(T[l]&&T[l][k])el.innerHTML=T[l][k];});
+var deliveryState=document.getElementById("ddone");
+if(deliveryState&&deliveryState.dataset.deliveryState==="manual"){
+document.getElementById("ddone-title").textContent=fallbackHeadings[l]||fallbackHeadings.fr;
+document.getElementById("ddone-detail").textContent=fallbackDetails[l]||fallbackDetails.fr;
+var deliveryError=document.getElementById("derr");
+deliveryError.textContent=fallbackText[l]||fallbackText.fr;
+}
 $$(".lang").forEach(function(b){
 b.classList.toggle("active",b.getAttribute("data-lang")===l);
 b.setAttribute("aria-pressed",b.getAttribute("data-lang")===l?"true":"false");
@@ -158,14 +171,9 @@ var lang=document.documentElement.lang;
 var err=document.getElementById("derr");
 err.textContent=fallbackText[lang]||fallbackText.fr;
 err.style.display="block";
-var headings={fr:"Envoi non effectué",es:"Solicitud pendiente de envío",en:"Request not sent"};
-var details={
-fr:"Votre demande n'a pas encore été transmise. Cliquez sur WhatsApp ou E-mail ci-dessous pour l'envoyer vous-même.",
-es:"Tu solicitud todavía no se ha enviado. Pulsa WhatsApp o E-mail para enviarla tú mismo.",
-en:"Your request has not been sent. Select WhatsApp or E-mail below to send it yourself."
-};
-document.getElementById("ddone-title").textContent=headings[lang]||headings.fr;
-document.getElementById("ddone-detail").textContent=details[lang]||details.fr;
+document.getElementById("ddone").dataset.deliveryState="manual";
+document.getElementById("ddone-title").textContent=fallbackHeadings[lang]||fallbackHeadings.fr;
+document.getElementById("ddone-detail").textContent=fallbackDetails[lang]||fallbackDetails.fr;
 document.getElementById("dwa").href="https://wa.me/33628518849?text="+encodeURIComponent(body);
 document.getElementById("dmail").href="mailto:contact@steven-renovation.fr?subject="+encodeURIComponent("Demande de devis — "+n)+"&body="+encodeURIComponent(body);
 document.getElementById("dflow").style.display="none";
@@ -173,6 +181,7 @@ document.querySelector(".dprog").style.display="none";
 document.getElementById("ddone").hidden=false;
 }
 function showDone(){
+document.getElementById("ddone").dataset.deliveryState="sent";
 document.getElementById("dwa").href="https://wa.me/33628518849?text="+encodeURIComponent(body);
 document.getElementById("dmail").href="mailto:contact@steven-renovation.fr?subject="+encodeURIComponent("Demande de devis — "+n)+"&body="+encodeURIComponent(body);
 document.getElementById("dflow").style.display="none";
