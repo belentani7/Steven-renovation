@@ -9,12 +9,21 @@
     var request = opts.fetch || (typeof root.fetch === "function" ? root.fetch.bind(root) : null);
     if (!request) return Promise.resolve(false);
 
-    var controller = typeof AbortController === "function" ? new AbortController() : null;
+    var controller = typeof root.AbortController === "function" ? new root.AbortController() : null;
     var configuredTimeout = Number(opts.timeoutMs);
     var timeoutMs = Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : 12000;
-    var timer = controller ? setTimeout(function () { controller.abort(); }, timeoutMs) : null;
+    var timer = null;
 
-    return Promise.resolve()
+    // Aborting is best effort: some fetch implementations and response bodies
+    // ignore AbortSignal. The deadline must settle independently of abort.
+    var deadline = new Promise(function (resolve) {
+      timer = setTimeout(function () {
+        if (controller) controller.abort();
+        resolve(false);
+      }, timeoutMs);
+    });
+
+    var delivery = Promise.resolve()
       .then(function () {
         return request("/.netlify/functions/devis", {
           method: "POST",
@@ -32,7 +41,9 @@
           return !!(receipt && receipt.ok === true);
         });
       })
-      .catch(function () { return false; })
+      .catch(function () { return false; });
+
+    return Promise.race([delivery, deadline])
       .finally(function () { if (timer !== null) clearTimeout(timer); });
   }
 

@@ -68,3 +68,36 @@ test("missing browser fetch falls back to an unsent state", async () => {
     globalThis.fetch = previous;
   }
 });
+
+test("deadline settles even when fetch ignores AbortSignal", async () => {
+  const result = await Promise.race([
+    postQuote({}, { timeoutMs: 15, fetch: () => new Promise(() => {}) }),
+    new Promise((resolve) => setTimeout(() => resolve("hung"), 300))
+  ]);
+  assert.equal(result, false);
+});
+
+test("deadline also covers a stalled JSON response body", async () => {
+  const result = await Promise.race([
+    postQuote({}, {
+      timeoutMs: 15,
+      fetch: async () => ({
+        ok: true,
+        headers: { get: () => "application/json" },
+        json: () => new Promise(() => {})
+      })
+    }),
+    new Promise((resolve) => setTimeout(() => resolve("hung"), 300))
+  ]);
+  assert.equal(result, false);
+});
+
+test("late successful acknowledgements cannot override a timed-out request", async () => {
+  const result = await postQuote({}, {
+    timeoutMs: 10,
+    fetch: () => new Promise((resolve) => {
+      setTimeout(() => resolve(answer()), 80);
+    })
+  });
+  assert.equal(result, false);
+});
