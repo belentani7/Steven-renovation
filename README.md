@@ -90,3 +90,16 @@ y la carpeta `magic/` sí son material propio de la capa Belentani.
 ## Licencia
 
 [MIT](LICENSE) — Copyright (c) 2026 Pedro Belentani (belentani7).
+---
+
+## Ficha del proyecto
+
+| Campo | Valor |
+|---|---|
+| Autor | Belentani / NOIACORE |
+| Época de desarrollo | 2026 |
+| Contacto | [belentani7studio@proton.me](mailto:belentani7studio@proton.me) |
+| Código | https://github.com/belentani7/Steven-renovation |
+| Demo desplegada | https://belentani7.github.io/Steven-renovation/ |
+
+Quality baseline: CI + Dependabot + CodeQL + reglas de agentes por [premium-factory](https://github.com/belentani7/premium-factory-api).
