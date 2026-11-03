@@ -9,7 +9,7 @@ jobs:
         run: test -f README.md && test -f LICENSE && test -f .gitignore
       - name: HTML parseable
         run: for f in $(find . -name "*.html" | head -50); do python3 -c "import html.parser,sys; html.parser.HTMLParser().feed(open('$f',encoding='utf-8',errors='replace').read())"; done && echo HTML OK
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with: { node-version: 20 }
       - name: Sintaxis JS propio
         # magic/plugin.js se excluye: es TypeScript (fuente del plugin opencode), no JS ejecutable
