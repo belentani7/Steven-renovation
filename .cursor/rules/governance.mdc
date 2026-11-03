@@ -1,0 +1,26 @@
+---
+description: Reglas de gobernanza del ecosistema belentani7 para Steven-renovation
+alwaysApply: true
+globs:
+  - "**/*"
+---
+
+# Reglas de gobernanza — Steven-renovation
+
+## Seguridad (obligatorio)
+- No commitear secretos, API keys, tokens ni credenciales en ningún archivo.
+- Ejecutar gitleaks antes de cada push.
+- CODEOWNERS: @belentani7 revisión requerida en todos los cambios.
+
+## Commits
+- Usar conventional commits: `type(scope): summary`
+  - Tipos: feat, fix, docs, chore, refactor, test, perf, style
+
+## HTML / CSS
+- Sitio premium multiidioma (FR/ES/EN).
+- Semantic HTML, alt text en imágenes.
+- `lang`, viewport, `color-scheme`, CSP.
+- `:focus-visible` en todos los elementos interactivos.
+- Estados vacío, error y carga diseñados.
+- Touch targets >= 44px.
+- Tokens CANON: #05030a, #ff073a, #d4af37, #4de8e0.
