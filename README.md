@@ -1,5 +1,10 @@
 # Steven Rénovation
 
+<p><img src="https://github.com/belentani7/Steven-renovation/actions/workflows/ci.yml/badge.svg" alt="CI" style="vertical-align:middle">
+  <img src="https://github.com/belentani7/Steven-renovation/actions/workflows/codeql.yml/badge.svg" alt="CodeQL" style="vertical-align:middle">
+  <img src="https://img.shields.io/badge/dependabot-enabled-025e8c?logo=dependabot&style=flat-square" alt="Dependabot">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fbelentani7.github.io%2FSteven-renovation%2F&label=demo&style=flat-square&color=2bb673" alt="demo live"></p>
+
 Web de presentación de **Steven Rénovation**, empresa general de reformas en París e
 Île-de-France. Sitio 100 % estático (HTML/CSS/JS, sin build ni dependencias) que presenta
 servicios, realizaciones y precios, y capta presupuestos por WhatsApp, teléfono y email.
