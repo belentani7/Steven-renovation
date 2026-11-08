@@ -5,6 +5,7 @@
     window.__frontUpgrade.lenis = window.Lenis;
   }
   if (typeof window.gsap !== 'undefined' && window.gsap.registerPlugin) {
+    gsap.registerPlugin(ScrollTrigger);
     window.__frontUpgrade.scrollTrigger = true;
   }
 })();
