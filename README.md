@@ -1,4 +1,4 @@
-﻿# Steven Rénovation
+# Steven Rénovation
 
 <p><img src="https://github.com/belentani7/Steven-renovation/actions/workflows/ci.yml/badge.svg" alt="CI" style="vertical-align:middle">
   <img src="https://github.com/belentani7/Steven-renovation/actions/workflows/codeql.yml/badge.svg" alt="CodeQL" style="vertical-align:middle">
