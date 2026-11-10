@@ -48,3 +48,14 @@ secrets.json
 .npmrc
 .pypirc
 .user_env
+
+# repo-forge
+node_modules/
+dist/
+build/
+.next/
+out/
+coverage/
+__pycache__/
+*.pyc
+.venv/

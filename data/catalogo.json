@@ -1,0 +1,31 @@
+{
+  "nombre": "Steven-renovation",
+  "remoto": "https://github.com/belentani7/Steven-renovation",
+  "tipo": "web-static",
+  "modelo": "sitio de reformas",
+  "publico": "propietarios en Barcelona",
+  "licencia": "MIT",
+  "medido": {
+    "archivos": 40,
+    "lineas": 2305,
+    "bytes": 98613,
+    "html": 7,
+    "tests": 1
+  },
+  "modulos": [
+    "Obra",
+    "Servicios",
+    "Presupuesto",
+    "Contacto"
+  ],
+  "paleta": {
+    "bg": "#ffffff",
+    "ink": "#141414",
+    "accent": "#1f50da"
+  },
+  "fuente": {
+    "ruta": "repos\\Steven-renovation",
+    "fecha": "2026-11-10"
+  },
+  "generado_por": "repo-forge"
+}
