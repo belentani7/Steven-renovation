@@ -108,3 +108,7 @@ y la carpeta `magic/` sí son material propio de la capa Belentani.
 | Demo desplegada | https://belentani7.github.io/Steven-renovation/ |
 
 Quality baseline: CI + Dependabot + CodeQL + reglas de agentes por [premium-factory](https://github.com/belentani7/premium-factory-api).
+
+
+## Producto
+Véase `plataforma/OFERTA.md`, `plataforma/precios.json`, `plataforma/ONEPAGER.md`.
