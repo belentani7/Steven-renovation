@@ -15,4 +15,4 @@ jobs:
         # magic/plugin.js se excluye: es TypeScript (fuente del plugin opencode), no JS ejecutable
         run: find . -name "*.js" -not -path "./node_modules/*" -not -name "*.min.js" -not -path "./magic/plugin.js" | xargs -r -n1 node --check
       - name: Tests básicos
-        run: node --test test/
+        run: node --test test/*.test.mjs
