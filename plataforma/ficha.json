@@ -1,0 +1,75 @@
+{
+  "esquema": "repo-forge/ficha/1",
+  "nombre": "Steven-renovation",
+  "remoto": "https://github.com/belentani7/Steven-renovation",
+  "arquetipo": "web-static",
+  "stack": "HTML",
+  "modelo": "sitio de reformas",
+  "publico": "propietarios en Barcelona",
+  "techo": "portafolio de obra con presupuesto y plazos, que genere llamadas",
+  "modulos": [
+    "Obra",
+    "Servicios",
+    "Presupuesto",
+    "Contacto"
+  ],
+  "no_go": "fotos sin permiso",
+  "marca": {
+    "nombre": "Steven Rénovation",
+    "familia": "comercio",
+    "paleta": {
+      "familia": "comercio",
+      "bg": "#ffffff",
+      "surface": "#f9f9f9",
+      "ink": "#141414",
+      "muted": "#6d6d6d",
+      "accent": "#1f50da",
+      "accent2": "#d97706",
+      "ok": "#15803d",
+      "warn": "#b45309",
+      "danger": "#b91c1c",
+      "contraste_ink_bg": 18.42,
+      "contraste_accent_bg": 6.53,
+      "accent_sobre_bg_ok": true
+    },
+    "narrativa": "Que el cliente decida sin fricción"
+  },
+  "paywall": {
+    "principio": "sin muro: el visitante ve precio y resultado antes de dar datos",
+    "fases": 4
+  },
+  "medido": {
+    "archivos": 40,
+    "lineas": 2305,
+    "html": 7,
+    "tests": 1,
+    "bytes": 98613,
+    "lenguajes": {
+      "HTML": 66.5,
+      "Markdown": 15.4,
+      "JavaScript": 11.7,
+      "CSS": 5.5,
+      "JSON": 0.8
+    },
+    "fecha": "2026-11-10"
+  },
+  "gate": {
+    "pass": 34,
+    "fail": 0,
+    "skip": 15,
+    "cumplimiento": 100.0,
+    "fallos": []
+  },
+  "ajustes": {
+    "total": 61,
+    "aplicados": 51,
+    "ya_estaban": 10,
+    "fallos": 0
+  },
+  "esfuerzo_dias": 41,
+  "doctor": {
+    "ok": true,
+    "detalle": "38/38 comprobaciones en verde"
+  },
+  "huella": "ed3e5a4e1ee995c4"
+}

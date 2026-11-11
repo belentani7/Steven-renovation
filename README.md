@@ -108,3 +108,75 @@ y la carpeta `magic/` sí son material propio de la capa Belentani.
 | Demo desplegada | https://belentani7.github.io/Steven-renovation/ |
 
 Quality baseline: CI + Dependabot + CodeQL + reglas de agentes por [premium-factory](https://github.com/belentani7/premium-factory-api).
+
+<!-- repo-forge:readme:inicio -->
+## Qué es
+
+**Steven Rénovation** — sitio de reformas.
+
+Decir la verdad del precio, el plazo y el resultado, y hacer que dar el paso sea fácil.
+
+## Estado medido
+
+| Dato | Valor |
+|---|---|
+| Lenguajes | HTML, Markdown, JavaScript, CSS, JSON |
+| Archivos / líneas | 40 / 2305 |
+| Páginas HTML | 7 |
+| Tests detectados | 1 |
+| Cumplimiento de reglas | 34/34 (100.0%) |
+
+Todo lo anterior se midió en disco el 2026-11-10; no es una estimación.
+
+## Uso
+
+```bash
+python scripts/doctor.py   # verificación sin dependencias
+```
+
+## Estructura
+
+```
+assets/
+brand/
+data/
+docs/
+magic/
+plataforma/
+producto/
+scripts/
+site/
+test/
+```
+
+## Diseño de plataforma
+
+- Obra
+- Servicios
+- Presupuesto
+- Contacto
+
+La ficha completa —máximo potencial, marca, fases de monetización y recursos— vive en
+[`plataforma/FICHA.md`](plataforma/FICHA.md). Los tokens de marca están en
+[`brand/tokens.css`](brand/tokens.css).
+
+## Reglas del proyecto
+
+Este repositorio sigue el catálogo oficial del ecosistema (`GH-*`, `WEB-*`, `ACC-*`,
+`SEO-*`, `COH-*`, `DEV-*`). El gate se ejecuta con:
+
+```bash
+python scripts/doctor.py
+```
+
+## Licencia
+
+MIT. Ver [`LICENSE`](LICENSE).
+<!-- repo-forge:readme:fin -->
+<!-- repo-forge:readme:fin -->
+<!-- repo-forge:readme:fin -->
+<!-- repo-forge:readme:fin -->
+
+## Producto
+
+Oferta, precio y cobro: [`producto/OFERTA.md`](producto/OFERTA.md) · [`producto/precios.json`](producto/precios.json) · [`producto/landing.html`](producto/landing.html)

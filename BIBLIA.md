@@ -67,3 +67,51 @@ Ejemplos:
 - Rojo neón: `#ff073a` (acento primario)
 - Dorado Zion: `#d4af37` (acento secundario)
 - Cyan señal: `#4de8e0` (acento terciario)
+
+<!-- repo-forge:biblia:inicio -->
+# BIBLIA.md — Steven-renovation
+
+Doctrina del producto del repositorio `Steven-renovation` del ecosistema belentani7.
+
+## Visión
+
+portafolio de obra con presupuesto y plazos, que genere llamadas
+
+## Misión
+
+Decir la verdad del precio, el plazo y el resultado, y hacer que dar el paso sea fácil.
+
+## Público
+
+propietarios en Barcelona
+
+## Stack
+
+sitio estático publicable tal cual · HTML, Markdown, JavaScript, CSS, JSON
+
+## Módulos que la promesa exige
+
+- Obra
+- Servicios
+- Presupuesto
+- Contacto
+
+## Reglas de desarrollo
+
+- Protocolo spec-first: PRD → SRS → Design Doc → ADR → Plan → Tests.
+- Un cambio, un resultado verificable.
+- Nada se afirma sin ejecución; lo no probado se declara como no probado.
+- Escritura solo con confirmación; nada destructivo.
+- Idioma del producto: español, salvo el público del repositorio.
+- Secreto fuera de disco, logs y manifiestos.
+
+## Lo que este repositorio no va a hacer
+
+fotos sin permiso
+
+## Convenciones
+
+`type(scope): resumen` — feat, fix, docs, chore, refactor, test, perf.
+
+<!-- repo-forge:biblia -->
+<!-- repo-forge:biblia:fin -->

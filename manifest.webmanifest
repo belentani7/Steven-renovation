@@ -1,0 +1,17 @@
+{
+  "name": "Steven Rénovation",
+  "short_name": "Steven Rénov",
+  "description": "sitio de reformas",
+  "lang": "es",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1f50da",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
