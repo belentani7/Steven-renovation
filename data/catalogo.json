@@ -1,4 +1,33 @@
 {
+  "nombre": "Steven-renovation",
+  "remoto": "https://github.com/belentani7/Steven-renovation",
+  "tipo": "web-static",
+  "modelo": "sitio de reformas",
+  "publico": "propietarios en Barcelona",
+  "licencia": "MIT",
+  "medido": {
+    "archivos": 40,
+    "lineas": 2305,
+    "bytes": 98613,
+    "html": 7,
+    "tests": 1
+  },
+  "modulos": [
+    "Obra",
+    "Servicios",
+    "Presupuesto",
+    "Contacto"
+  ],
+  "paleta": {
+    "bg": "#ffffff",
+    "ink": "#141414",
+    "accent": "#1f50da"
+  },
+  "fuente": {
+    "ruta": "repos\\Steven-renovation",
+    "fecha": "2026-11-10"
+  },
+  "generado_por": "repo-forge",
   "repo": "Steven-renovation",
   "familia": "educación",
   "ajustes_aplicados": 50,
@@ -6,5 +35,6 @@
   "estado": "estructurado",
   "producto_completo": false,
   "generado": "2026-11-10T19:11:06.338300+00:00",
-  "motor": "repo_forge.py"
+  "motor": "repo_forge.py",
+  "medicion_es_historica": true
 }

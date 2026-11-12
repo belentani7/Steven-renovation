@@ -41,7 +41,9 @@ test("index.html declara el negocio (título y descripción)", () => {
   const html = readFileSync(join(root, "index.html"), "utf8");
   assert.match(html, /<title>Steven Rénovation[^<]*<\/title>/);
   assert.match(html, /<meta name="description"/);
-  assert.match(html, /wa\.me/, "debe enlazar WhatsApp para presupuestos");
+  assert.match(html, /El canal comercial de presupuestos está pendiente de configurar/);
+  assert.match(html, /href="https:\/\/github.com\/belentani7\/Steven-renovation"/);
+  assert.doesNotMatch(html, /href="https:\/\/wa\.me\/"/, "no publicar un contacto vacío");
 });
 
 test("el repo cumple los protocolos base (LICENSE MIT + README)", () => {
